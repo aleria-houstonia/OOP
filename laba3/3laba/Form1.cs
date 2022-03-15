@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace _3laba
@@ -19,6 +20,7 @@ namespace _3laba
         private void button2_Click(object sender, EventArgs e)
         {
             int Count = students.Count;
+            if (comboBox1.SelectedItem == null) textBox1.Text = "Не выбрано поле студента для удаления";
             for (int i = 0; i < Count; i++)
             {
                 Student First = students.Dequeue();
@@ -114,28 +116,6 @@ namespace _3laba
             }
 
         }
-        private void AddElem()
-        {
-            var startTime = System.Diagnostics.Stopwatch.StartNew();
-            for (int i = 0; i < 10000; i++)
-            {
-                Random rn = new Random();
-                int randNum = rn.Next();
-                MyArr.Add(randNum);
-                Random rn1 = new Random();
-                int randNum1 = rn1.Next();
-                Fifo.Enqueue(randNum1);
-            }
-            startTime.Stop();
-            var resultTime = startTime.Elapsed;
-            // elapsedTime - строка, которая будет содержать значение затраченного времени
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:000}",
-                resultTime.Hours,
-                resultTime.Minutes,
-                resultTime.Seconds,
-                resultTime.Milliseconds);
-
-        }
 
         private void ToInt(string key, Student st)
         {
@@ -169,60 +149,147 @@ namespace _3laba
                 }
             RenderList();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
+            int N = 1000;
+            MyArr.Clear();
+            students.Clear();
+            Student.Counter = 0;
+            Random rn = new Random(DateTime.Now.Millisecond);
+            Stopwatch sw = new Stopwatch(), sw1 = new Stopwatch();
+            sw.Start();
+            for (int i = 0; i < N; i++)
+            {
+                students.Enqueue(new Student("Name" + rn.Next(),
+                    "Univer" + rn.Next(), "faculty" + rn.Next(),
+                    "Department" + rn.Next(), Convert.ToUInt32(rn.Next(0, 100000)),
+                    Convert.ToUInt32(rn.Next(0, 100000)), Convert.ToUInt32(rn.Next(0, 100000)),
+                    Convert.ToUInt32(rn.Next(0, 100000)), Convert.ToUInt32(rn.Next(0, 100000)), rn.Next()));
+
+            }
+            sw.Stop();
+            long ticks = sw.ElapsedTicks;
+            queueGen.Text = ticks.ToString();
+            sw1.Start();
+            for (int i = 0; i < N; i++)
+            {
+                MyArr.Add(new Student("Name" + rn.Next(),
+                     "Univer" + rn.Next(), "faculty" + rn.Next(),
+                     "Department" + rn.Next(), Convert.ToUInt32(rn.Next(0, N)),
+                     Convert.ToUInt32(rn.Next(0, N)), Convert.ToUInt32(rn.Next(0,N)),
+                     Convert.ToUInt32(rn.Next(0, N)), Convert.ToUInt32(rn.Next(0, N)), rn.Next()));
+            }
+            sw1.Stop();
+            long ticks1 = sw1.ElapsedTicks;
+            arrayGen.Text = ticks1.ToString();
+
+            string res;
+            Stopwatch swPosled = new Stopwatch(), swPosled2 = new Stopwatch();
+            swPosled.Start();
+            foreach (Student student in students)
+                res = student.Name;
+            swPosled.Stop();
+            long ticks3 = swPosled.ElapsedTicks;
+            queuePosled.Text = ticks3.ToString();
+
+            swPosled2.Start();
+            for (int i = 0; i <N; i++)
+            {
+                res = MyArr[i].ToString();
+            }
+            swPosled2.Stop();
+            long ticks4 = swPosled2.ElapsedTicks;
+            arrayPosled.Text = ticks4.ToString();
+
+            Stopwatch swRand = new Stopwatch(), swRand2 = new Stopwatch();
+
+            swRand.Start();
+            foreach (Student student in students)
+                res = student.Name;
+            swRand.Stop();
+            long ticks5 = swRand.ElapsedTicks;
+            queueRandom.Text = ticks5.ToString();
+
+
+            swRand2.Start();
+            for (int i = 0; i < N; i++)
+            {
+                res = MyArr[rn.Next(0, 1000)].ToString();
+            }
+            swRand2.Stop();
+            long ticks6 = swRand2.ElapsedTicks;
+            arrayRandom.Text = ticks6.ToString();
+
+            RenderList();
+        }
+
+        private void AddElem()
+        {
+            /*
+             for (int i = 0; i < 100000; i++)
+             {
+                 Random rn = new Random();
+                 int randNum = rn.Next();
+                 MyArr.Add(randNum);
+                 Random rn1 = new Random();
+                 int randNum1 = rn1.Next();
+                 Fifo.Enqueue(randNum1);
+             }
+             startTime.Stop();
+             var resultTime = startTime.Elapsed;
+             // elapsedTime - строка, которая будет содержать значение затраченного времени
+             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:000}",
+                 resultTime.Hours,
+                 resultTime.Minutes,
+                 resultTime.Seconds,
+                 resultTime.Milliseconds);
+             var startTime = System.Diagnostics.Stopwatch.StartNew();
+             */
 
         }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
 
         private void button3_Click(object sender, EventArgs e) { }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
 
-        }
+        private void panel2_Paint(object sender, PaintEventArgs e) { }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
+        private void panel3_Paint(object sender, PaintEventArgs e) { }
 
-        }
+        private void panel4_Paint(object sender, PaintEventArgs e) { }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
+        private void label4_Click(object sender, EventArgs e) { }
 
-        }
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-        }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void label1_Click(object sender, EventArgs e) { }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
+        private void label2_Click(object sender, EventArgs e) { }
 
         private void label3_Click(object sender, EventArgs e) { }
 
         private void Form1_Load(object sender, EventArgs e) { }
+
+
+        private void label5_Click(object sender, EventArgs e) { }
+
+        private void label7_Click(object sender, EventArgs e) { }
+
+        private void textBox5_TextChanged(object sender, EventArgs e) { }
+
+        private void queueGen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void queuePosled_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

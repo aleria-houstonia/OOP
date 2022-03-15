@@ -33,6 +33,21 @@ namespace _3laba
             Counter++;
             Id = Counter;
         }
+        public Student(string name, string university, string faculty, string department, uint yearofstudy, uint dateofadmission, uint groupnumber, uint academicperformance, uint numberofmissedlecture, float averagescore)
+        {
+            Counter++;
+            Name = name;
+            University = university;
+            Faculty = faculty;
+            Department = department;
+            Yearofstudy = yearofstudy;
+            Dateofadmission = dateofadmission;
+            Groupnumber = groupnumber;
+            Academicperformance = academicperformance;
+            Numberofmissedlectures = numberofmissedlecture;
+            Averagescore = averagescore;
+        }
+
 
         public Student(string name, string university)
         {
@@ -43,7 +58,7 @@ namespace _3laba
 
         public override string ToString()
         {
-            return $"{Name},{University},{Faculty},{Department},{Yearofstudy},{Dateofadmission},{Groupnumber},{Academicperformance},{Numberofmissedlectures},{Averagescore}";
+            return $"{Name}";
         }
         public void ConvertToHexadecimal()
         {
