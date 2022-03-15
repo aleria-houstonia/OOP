@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -30,11 +31,12 @@ namespace _3laba
                     students.Enqueue(First);
                 }
                 else
-                {
+                {   
                     comboBox1.Items.Clear();
                     foreach (Student student in students)
                         comboBox1.Items.Add(student.Name);
                     textBox1.Text = "Удален";
+                    comboBox1.Text = "";
                     break;
                 }
             }
@@ -154,6 +156,7 @@ namespace _3laba
             int N = 1000;
             MyArr.Clear();
             students.Clear();
+            Student stVar;
             Student.Counter = 0;
             Random rn = new Random(DateTime.Now.Millisecond);
             Stopwatch sw = new Stopwatch(), sw1 = new Stopwatch();
@@ -204,8 +207,13 @@ namespace _3laba
             Stopwatch swRand = new Stopwatch(), swRand2 = new Stopwatch();
 
             swRand.Start();
-            foreach (Student student in students)
-                res = student.Name;
+            // foreach (Student student in students)
+            //    res = student.Name;
+            for (int i = 0; i < N; i++)
+            {
+                stVar = students.ElementAt(rn.Next(0, 1000));
+
+            }
             swRand.Stop();
             long ticks5 = swRand.ElapsedTicks;
             queueRandom.Text = ticks5.ToString();
