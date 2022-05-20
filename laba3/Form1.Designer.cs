@@ -74,7 +74,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(249, 312);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+    
             // 
             // button1
             // 
@@ -94,7 +94,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(202, 62);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+  
             // 
             // checkedListBox1
             // 
@@ -130,7 +130,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(249, 114);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+        
             // 
             // button2
             // 
@@ -150,7 +150,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(184, 21);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+
             // 
             // panel3
             // 
@@ -163,7 +163,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(249, 104);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+    
             // 
             // label2
             // 
@@ -173,7 +173,7 @@
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Имя";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+          
             // 
             // button3
             // 
@@ -192,7 +192,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(184, 20);
             this.textBox2.TabIndex = 0;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+           
             // 
             // label1
             // 
@@ -205,7 +205,7 @@
             this.label1.Size = new System.Drawing.Size(146, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Добавить студента";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+   
             // 
             // label3
             // 
@@ -218,7 +218,7 @@
             this.label3.Size = new System.Drawing.Size(139, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Список студентов";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+
             // 
             // panel4
             // 
@@ -240,7 +240,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(242, 370);
             this.panel4.TabIndex = 4;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+    
             // 
             // queueRandom
             // 
@@ -262,7 +262,7 @@
             this.queuePosled.Name = "queuePosled";
             this.queuePosled.Size = new System.Drawing.Size(100, 20);
             this.queuePosled.TabIndex = 11;
-            this.queuePosled.TextChanged += new System.EventHandler(this.queuePosled_TextChanged);
+
             // 
             // arrayPosled
             // 
@@ -270,7 +270,7 @@
             this.arrayPosled.Name = "arrayPosled";
             this.arrayPosled.Size = new System.Drawing.Size(100, 20);
             this.arrayPosled.TabIndex = 10;
-            this.arrayPosled.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+
             // 
             // arrayGen
             // 
@@ -285,7 +285,7 @@
             this.queueGen.Name = "queueGen";
             this.queueGen.Size = new System.Drawing.Size(100, 20);
             this.queueGen.TabIndex = 8;
-            this.queueGen.TextChanged += new System.EventHandler(this.queueGen_TextChanged);
+       
             // 
             // label9
             // 
@@ -313,7 +313,7 @@
             this.label7.Size = new System.Drawing.Size(119, 13);
             this.label7.TabIndex = 5;
             this.label7.Text = "Генерация элементов";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+          
             // 
             // label6
             // 
@@ -335,7 +335,7 @@
             this.label5.Size = new System.Drawing.Size(49, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "Queue";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+      
             // 
             // button4
             // 
@@ -359,7 +359,7 @@
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Результаты";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // Form1
             // 
@@ -376,7 +376,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Student";
-            this.Load += new System.EventHandler(this.Form1_Load);
+     
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();

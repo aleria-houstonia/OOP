@@ -207,8 +207,7 @@ namespace _3laba
             Stopwatch swRand = new Stopwatch(), swRand2 = new Stopwatch();
 
             swRand.Start();
-            // foreach (Student student in students)
-            //    res = student.Name;
+          
             for (int i = 0; i < N; i++)
             {
                 stVar = students.ElementAt(rn.Next(0, 1000));
@@ -229,75 +228,6 @@ namespace _3laba
             arrayRandom.Text = ticks6.ToString();
 
             RenderList();
-        }
-
-        private void AddElem()
-        {
-            /*
-             for (int i = 0; i < 100000; i++)
-             {
-                 Random rn = new Random();
-                 int randNum = rn.Next();
-                 MyArr.Add(randNum);
-                 Random rn1 = new Random();
-                 int randNum1 = rn1.Next();
-                 Fifo.Enqueue(randNum1);
-             }
-             startTime.Stop();
-             var resultTime = startTime.Elapsed;
-             // elapsedTime - строка, которая будет содержать значение затраченного времени
-             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:000}",
-                 resultTime.Hours,
-                 resultTime.Minutes,
-                 resultTime.Seconds,
-                 resultTime.Milliseconds);
-             var startTime = System.Diagnostics.Stopwatch.StartNew();
-             */
-
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e) { }
-
-        private void button3_Click(object sender, EventArgs e) { }
-
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
-
-        private void panel2_Paint(object sender, PaintEventArgs e) { }
-
-        private void panel3_Paint(object sender, PaintEventArgs e) { }
-
-        private void panel4_Paint(object sender, PaintEventArgs e) { }
-
-        private void label4_Click(object sender, EventArgs e) { }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e) { }
-
-        private void textBox2_TextChanged(object sender, EventArgs e) { }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
-
-        private void label1_Click(object sender, EventArgs e) { }
-
-        private void label2_Click(object sender, EventArgs e) { }
-
-        private void label3_Click(object sender, EventArgs e) { }
-
-        private void Form1_Load(object sender, EventArgs e) { }
-
-
-        private void label5_Click(object sender, EventArgs e) { }
-
-        private void label7_Click(object sender, EventArgs e) { }
-
-        private void textBox5_TextChanged(object sender, EventArgs e) { }
-
-        private void queueGen_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void queuePosled_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
